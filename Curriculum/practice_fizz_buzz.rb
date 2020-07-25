@@ -10,9 +10,19 @@ def fizz_buzz(number)
 	end
 
 end
+puts "何回繰り返しますか?"
+n = gets.to_i
+puts "#{n}回繰り返します"
+i = 1
 
-puts "1以上の数を入力してください"
+while i <= n
+	puts "#{i}回目"
+	puts "1以上の数を入力してください"
+	number = gets.to_i
+	puts fizz_buzz(number)
+	i += 1
+end
 
-number = gets.to_i
+puts "#{n}回繰り返しました。処理を終了します。"
 
-puts fizz_buzz(number)
+
