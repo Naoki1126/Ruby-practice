@@ -1,2 +1,8 @@
-#出力
-print("Hello, Ruby")
+#出力 1-1
+print("Hello, Ruby.\n")
+
+
+
+
+
+
