@@ -8,3 +8,17 @@ p person1[:name]
 person.each do |key,value|
     puts "#{key}: #{value}"
 end
+
+person.each_with_index do |key,value|
+    puts "#{key},#{value}"
+end
+
+person.each do |key,value|
+    puts "#{key},#{value}"
+end
+
+persons2 = ["name","aaa","bbb","ccc"]
+p persons2
+
+persons2[2] = "didididi"
+p persons2
