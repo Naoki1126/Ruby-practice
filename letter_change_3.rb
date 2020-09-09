@@ -15,3 +15,10 @@ puts str3
 puts str3[0]
 
 str4 = "Rubyの勉強 および Railsの勉強をはじめましょう"
+reg = /および/.match(str4) #正規表現でおよびを抽出
+p reg.pre_match #pre_match マッチした部分より前の文を取得
+
+str5 = "Rubyの勉強　およびRailsの勉強を初めましょう。"
+reg = /および/.match(str5)
+p reg.post_match #post_match マッチした部分より後の文を取得
+
