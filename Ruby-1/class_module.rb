@@ -29,6 +29,7 @@ class Receipt #クラス名は必ず大文字
     def replace_name
         name = "new name" #ローカル変数への代入
         self.name = "new name" #name= メソッドの呼び出し 変更させたい時にはselfは省略しない
+    end
     def calc
         total = 0
         @lines.each do |line|
@@ -47,6 +48,8 @@ class Receipt #クラス名は必ず大文字
 
         puts "合計金額：#{calc}円"
     end
+
+    VERSION = "1.0.0"
 end
 
 r = Receipt.new("ストアA") #Recept.name はストアAになる
@@ -59,3 +62,22 @@ r.output
 p r.name
 r2.name = "ストアB"#出力ではなくメソッドの呼び出しを行っている。これをすることで外部からインスタンス変数にアクセスすることができる
 
+#クラスメソッド
+class << Receipt
+    def create_receipt_xyz
+        self.new("ストアXYZ")
+    end
+end
+p Receipt.create_receipt_xyz
+
+
+#以下の書き方でも可能（一般的）
+class  Receipt
+    class << self
+        def create_receipt_xyz
+            self.new("ストアXYZ")
+        end
+    end
+end
+
+p Receipt::VERSION
