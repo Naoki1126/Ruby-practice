@@ -235,3 +235,10 @@ p $val
 end
 
 p $val
+
+
+arr = [["apple"],["banana"],["orange"]].flatten
+p arr
+arr.each do |i|
+  puts i
+end
