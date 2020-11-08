@@ -14,6 +14,8 @@
 # File.binwrite("binary.dat", data)
 # p File.read("binary.dat")
 
-io.each_line do |line|
-    line.chomp!
+open('test_1.text', 'r+' ) do |f|
+    data = f.read.upcase
+    f.rewind
+    f.puts data
 end
