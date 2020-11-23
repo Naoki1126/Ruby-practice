@@ -103,3 +103,15 @@
 #  p "A".ord #=>文字に対応する数字を返す。
 #  p "ZZ".ord
 
+p "HogeHOGEhoge"[/[A-Z][^A-Z]+/] #=> [A-Z]大文字A-Zにマッチ、[^A-Z]大文字A-Z以外にマッチする Hoge
+p "HogeHOGEhoge"[/[a-z][^A-Z]+/] #0=> oge
+
+# h = {"a": 1,"b": 2,"c": 3} #=> 今のバージョンであればこの打ち方でもOK
+# p h
+
+
+# h = {1 => "HOge", 2 => "Piyo", 3 => "fuga"}
+# p h.invert
+
+h = {1 => "hoge",2 => "piyo", 3 => "fuga"}
+p h.reject {|x,y| x < 2}
